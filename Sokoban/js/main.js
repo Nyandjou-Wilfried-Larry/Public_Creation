@@ -85,6 +85,7 @@ for (var dir in Btn) {
 }
 
 /*
+
 listener(window, 'keyup', (e) => {
   switch (e.keyCode) {
     case KEY_UP || KEY_Z:

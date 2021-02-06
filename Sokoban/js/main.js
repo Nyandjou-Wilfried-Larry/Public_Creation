@@ -55,7 +55,7 @@ const Btn = {
   right: btn[2],
   down: btn[3]
 };
-var Game,level=1;
+var Game,level=1,start=true;
 getLevel(level).then(data => {
   Game = new GAME('#cvs', data);
 });
@@ -63,10 +63,12 @@ getLevel(level).then(data => {
 
 for (var dir in Btn) {
   (function(dir) {
+    if(start){
     Btn[dir].onclick = function() {
       Game.move(dir);
       Game.render();
       if (Game.IsWin()) {
+        start=false;
         alert('Vous avez réussir le niveau №: '+level+'\n Voyons comment vous allez faire au niveau №: '+(level+1));
         if((level+1)<5){
           level++
@@ -75,9 +77,10 @@ for (var dir in Btn) {
         }
         getLevel(level).then(data => {
           Game = new GAME('#cvs', data);
+          start=true;
         });
       }
-    }
+    }}
   })(dir);
 }
 

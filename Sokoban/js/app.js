@@ -29,7 +29,7 @@ const B = 1,
 
 
 function SPRITE() {
-  this.size = Math.round(window.innerWidth / 10);
+  this.size = Math.round(((window.innerWidth>window.innerHeight)? window.innerHeight:window.innerWidth )/10);
   this.Mario = {
     up: new Image(this.size, this.size),
     down: new Image(this.size, this.size),
@@ -65,11 +65,12 @@ function GAME(id, data) {
   this.engine = this.cvs.getContext('2d');
 
   this.init();
+  this.onresize();
 }
 
 GAME.prototype = {
-  resize: function() {
-
+  onresize: function() {
+    listener(window,'resize',this.init)
   },
   draw: function(img, x, y) {
     if (img.complete) {

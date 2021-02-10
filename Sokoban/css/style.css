@@ -1,4 +1,4 @@
-body{
+body,html{
   font-size: large;
   background-color: #222;
   height: 100%;
@@ -6,53 +6,65 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-#cvs,canvas,.control{
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cvs,
+canvas,
+.control {
   background-color: #fff;
   border: thick ridge gray;
-  position: absolute;
+  margin: auto;
+  /*position: absolute;
   top: 31%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+
 }
 
-div.control{
-  top: 80%;
+.control {
+/*  top: 80%;
   max-width: 500px;
   width: 90%;
-  height: 35%;
+  height: 35%;*/
   display: grid;
   grid-template-areas: "a u b"
-                       "l c r"
-                       "e d f";
+    "l c r"
+    "e d f";
   grid-gap: 7px;
-  grid-row: repeat(3,calc(100% / 3));
-  grid-column: repeat(3,calc(100% / 3));
-  
+  grid-row: repeat(3, calc(100% / 3));
+  grid-column: repeat(3, calc(100% / 3));
+
 }
 
-.up{
+.up {
   grid-area: u;
 }
 
-.left{
+.left {
   grid-area: l;
 }
 
-.right{
+.right {
   grid-area: r;
 }
 
-.down{
+.down {
   grid-area: d;
 }
 
-.btn{
+.btn {
   border-radius: 20px;
   background-color: indigo;
   color: #fff;
@@ -64,6 +76,30 @@ div.control{
   overflow: hidden;
 }
 
-.btn:active{
-  box-shadow: 4px 4px 4px rgba(0,0,0,0.7);
+.btn:active {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
 }
+/*
+@media screen and (orientation : landscape) {
+  
+  body {
+    display: grid;
+    grid-template-columns: repeat(2,calc(1fr / 2));
+  }
+
+  #cvs,
+  canvas,
+  .control {
+    background-color: #fff;
+    border: thick ridge gray;
+    margin: auto;
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+}
+*/

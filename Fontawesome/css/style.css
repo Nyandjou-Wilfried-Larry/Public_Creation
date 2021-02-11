@@ -17,7 +17,7 @@ html,
 html,
 body {
   width: 100%;
-  background-color: beige;
+  height: 100%;
   text-align: center;
 }
 
@@ -27,17 +27,19 @@ body {
   margin: auto;
   text-align: left;
   position: relative;
+  background-color: var(--secondary-color);
+  height: 100%;
+  overflow-y: scroll;
 }
 
 header,
 nav {
   width: 100%;
-  padding: 3px 5px;
 }
 
-header {
+header nav, nav h1{
   background-color: var(--primary-color);
-
+  padding: 3px 5px;
 }
 
 nav.top h1 {
@@ -52,10 +54,52 @@ nav.top h1 img {
   margin: 0 10px -10px 0;
 }
 
+nav.bottom{
+  background-color: indigo;
+  margin: 5px auto;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  width: 90%;
+  border-radius: 30px;
+}
+
+nav.bottom *{
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+}
+
+input,select,.btn{
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 3px;
+  border: 2px solid navy;
+}
+
+label,.btn{
+  text-transform: capitalize;
+}
+
+p button.btn *,.btn{
+  display: inline-block;
+  padding: 2px;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: -2px;
+}
+
+.btn{
+  background-color: lime;
+}
+
+.btn:active{
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  transition: transform 1s;
+  transform: translateY(-5px) scaleX(1.1);
+}
+
 aside.content {
   width: 100%;
   padding: 5px;
-
 }
 
 aside details {
@@ -76,11 +120,13 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-summary h1 {
+summary h1{
   width: 100%;
-  text-align: center;
   text-transform: capitalize;
-  margin: 10px auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 details .item {
@@ -92,4 +138,34 @@ details .item {
   padding: 7px;
   border-radius: 10px;
   transition: all 50ms ease-in;
+}
+
+#card{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+#card>div{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 150px;
+  height: 100px;
 }

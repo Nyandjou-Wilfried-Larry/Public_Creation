@@ -82,19 +82,24 @@ function Icon(name, $class, code, parent) {
 function createCard(opt) {
   var card = create('div', { id: 'card' });
   card.innerHTML = `<div>
-<p class='prev'><i class='${opt.$class} fa-3x'></i></p><label for="">name:<input type="text" value="${opt.name}" disabled></label><label for="">class:<input type="text" value="${opt.$class}" disabled></label><label for="">css code:<input type="text" value="${opt.code}" disabled></label><div class="cpy"><p class="link"></p><span class="btncpy far fa-copy"></span></div><button>close</button></div>`;
+<p class='prev'><i class='${opt.$class} fa-3x'></i></p><label for="">name:<input type="text" value="${opt.name}" disabled></label><label for="">class:<input type="text" value="${opt.$class}" disabled></label><label for="">css code:<input type="text" value="${opt.code}" disabled></label><div class="cpy"><input disabled class="link"></div><p class="btn-g"><button>close</button><button id="btn-cpy"><span class="icon-cpy"><i class="far fa-copy"></i></span></button></p></div>`;
   if ($('#card')) {
     $('#card').remove();
   }
   document.body.appendChild(card);
-  card.ondblclick= function(){
-    card.remove()
-  }
-  $('#card>div>button').onclick= function(){
+  $('.link').value = `<i class='${opt.$class}'></i>`;
+  $('#card>div>p button').onclick = function() {
     card.remove();
+  }
+  $('#btn-cpy').onclick = function() {
+    $('.link').disabled = false;
+    $('.link').select();
+    $('.link').disabled = true;
+    document.execCommand('copy');
   }
 }
 /*
 window.addEventListener('click',(e)=>{
   alert(e.target.outerHTML)
 })*/
+

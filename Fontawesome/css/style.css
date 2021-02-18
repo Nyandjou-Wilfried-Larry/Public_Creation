@@ -111,14 +111,16 @@ aside details {
   margin: 20px auto;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
   text-align: center;
-  padding: auto;
-  display: flex;
-  flex-flow: row wrap;
+  /* padding: auto; */
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  
 }
 
-summary::-webkit-details-marker {
+summary::-webkit-details-marker ,summary::-moz-details-marker{
   display: none;
 }
 

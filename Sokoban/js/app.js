@@ -161,14 +161,14 @@ GAME.prototype.nextCase = function(dir) {
   return [Case1, Case2];
 };
 
-GAME.prototype.IsIn = function(bloc) {
-  var map = this.map;
-  if (blo.x < 0 || bloc.y < 0 || bloc.x >= map[0].length || bloc.y >= map.length) {
-    return false;
-  } else {
-    return true;
-  }
-};
+// GAME.prototype.IsIn = function(bloc) {
+//   var map = this.map;
+//   if (blo.x < 0 || bloc.y < 0 || bloc.x >= map[0].length || bloc.y >= map.length) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// };
 
 GAME.prototype.move = function(dir) {
   this.MARIO = this.Mario[dir]

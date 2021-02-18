@@ -84,20 +84,20 @@ for (var dir in Btn) {
   })(dir);
 }
 
-/*
+
 
 listener(window, 'keyup', (e) => {
   switch (e.keyCode) {
-    case KEY_UP || KEY_Z:
+    case KEY_UP : case KEY_Z:
       Game.move('up');
       break;
-    case KEY_DOWN || KEY_S:
+    case KEY_DOWN : case KEY_S:
       Game.move('down');
       break;
-    case KEY_LEFT || KEY_D:
+    case KEY_LEFT : case KEY_Q:
       Game.move('left');
       break;
-    case KEY_RIGHT || KEY_Q:
+    case KEY_RIGHT : case KEY_D:
       Game.move('right');
       break;
     case KEY_ESC:
@@ -106,7 +106,17 @@ listener(window, 'keyup', (e) => {
   }
   Game.render();
   if (Game.IsWin()) {
-    //To do
+    start=false;
+        alert('Vous avez réussir le niveau №: '+level+'\n Voyons comment vous allez faire au niveau №: '+(level+1));
+        if((level+1)<5){
+          level++
+        } else{
+          alert('Vous avez réussir tout les niveau \n j\'espère que vous que vous vous êtes bien amusé 😉' );
+        }
+        getLevel(level).then(data => {
+          Game = new GAME('#cvs', data);
+          start=true;
+        });
   }
-});*/
+});
 

@@ -10,7 +10,7 @@ function getLevel(index) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", './maps/level' + index + '.json');
   xhr.send();
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     xhr.onreadystatechange = function() {
       if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
         resolve(JSON.parse(xhr.responseText));

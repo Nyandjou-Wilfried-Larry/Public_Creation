@@ -1,10 +1,10 @@
 # Public_Creation
 my HTML CSS and JS creations
 
-# Sokoban : https://nyandjou-wilfried-larry.github.io/Public_Creation/Sokoban/
+-Sokoban : https://nyandjou-wilfried-larry.github.io/Public_Creation/Sokoban/
 
-* un jeu de mario avec des caisses *
+* un jeu de mario avec des caisses
 
-# Fontawesome : https://nyandjou-wilfried-larry.github.io/Public_Creation/Fontawesome
+_Fontawesome : https://nyandjou-wilfried-larry.github.io/Public_Creation/Fontawesome
 
-* venez ici chercher le nom d'une icon ou télécharger le pack d'icon *
+* venez ici chercher le nom d'une icon ou télécharger le pack d'icon

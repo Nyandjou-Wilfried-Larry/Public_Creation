@@ -19,7 +19,7 @@ html,body{
 }
 
 .container{
-  width: 500px;
+  width: 700px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -57,18 +57,18 @@ aside.content{
   width: 95%;
   box-shadow: var(--color-shadow);
   margin: auto;
-  text-align: left;
+  text-align: center;
   border-radius: 10px;
-  padding: 40px;
-  height: 90%;
+  flex: 0.95;
 }
 
 article.creation{
   border-radius: 20px;
   box-shadow: var(--color-shadow);
-  width: 230px;
-  margin: 0 auto 20px;
+  width: 250px;
+  margin: 20px auto;
   height: 300px;
+  text-align: left;
 }
 
 div footer.foot{

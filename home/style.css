@@ -1,4 +1,131 @@
 
 :root{
-  
+  --color-1: white;
+  --color-2: beige;
+  --color-shadow: 2px 2px 4px rgba(0,0,0,0.6),
+                 -2px -2px 4px rgba(205,205,205,0.6);
+  --timing: 0.5s ease-in;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 100%;
+  text-align: center;
+}
+
+header{
+  width: 100%;
+  margin: 0 0 10px;
+  text-align: center;
+  box-shadow: var(--color-shadow);
+}
+
+p.logo,h1.title{
+  margin: 5px auto 0;
+  display: inline-block;
+  text-transform: capitalize;
+  height: 54px;
+  overflow: hidden;
+}
+
+h1.title{
+  padding-top: 15px;
+}
+
+p.logo img{
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+aside.content{
+  width: 95%;
+  box-shadow: var(--color-shadow);
+  margin: auto;
+  text-align: left;
+  border-radius: 10px;
+  padding: 40px;
+  height: 90%;
+}
+
+article.creation{
+  border-radius: 20px;
+  box-shadow: var(--color-shadow);
+  width: 230px;
+  margin: 0 auto 20px;
+  height: 300px;
+}
+
+div footer.foot{
+  margin-top: 7px;
+  align-self: baseline;
+  text-align: center;
+  width: 100%;
+  box-shadow: var(--color-shadow);
+}
+
+.foot ul{
+  list-style-type: none;
+  width: 90%;
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 7px;
+}
+
+.foot ul li{
+  display: inline-block;
+  font-size: 25px;
+}
+
+.copyright,.account{
+  text-align: center;
+  padding: 5px 0 0 5px;
+  font-weight: bolder;
+  margin: 3px;
+}
+
+ul .fa-google{
+  color: orange;
+}
+
+ul .fa-whatsapp{
+  color: green;
+}
+
+ul .fa-facebook{
+  color: blue;
+}
+
+ul .fa-github{
+  color: #000;
+}
+
+ul .fa-linkedin{
+  color: blue;
+}
+
+ul .fa-phone-alt{
+  color: #000;
+  font-size: 23px;
+}
+
+ul .fa-youtube{
+  color: red;
 }

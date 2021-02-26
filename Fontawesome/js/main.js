@@ -58,6 +58,18 @@ function Main(Marque, Regular, Solid) {
       })
     }
   }
+  $('#in-exple').innerText=`          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="hightlight.js" type="text/Javascript" charset="utf-8"></script>
+            <title>ma page</title>
+          </head>
+          <body>
+            <!-- le contenu de la page -->
+          </body>
+          </html>`;
 }
 
 function Icon(name, $class, code, parent) {

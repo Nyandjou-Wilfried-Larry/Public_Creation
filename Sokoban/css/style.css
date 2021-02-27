@@ -6,14 +6,13 @@ body,html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
-body{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.container{
+  height: 100%;
+  width: 700px;
+  max-width: 100%;
+  position: relative;
 }
 
 #cvs,
@@ -22,22 +21,22 @@ canvas,
   background-color: #fff;
   border: thick ridge gray;
   margin: auto;
-  /*position: absolute;
-  top: 31%;
+  position: absolute;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);*/
+  transform: translate(-50%, -50%);
 
 }
-
+/*
 .control {
 /*  top: 80%;
   max-width: 500px;
   width: 90%;
-  height: 35%;*/
+  height: 35%;*//*
   display: grid;
   grid-template-areas: "a u b"
     "l c r"

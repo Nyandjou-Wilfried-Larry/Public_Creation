@@ -6,6 +6,25 @@ function Path(src) {
   return 'assets/images/src/' + src + '.png';
 };
 
+function getPosition(element) {
+  var top = 0,
+    left = 0;
+
+  do {
+    top += element.offsetTop;
+    left += element.offsetLeft;
+  } while (element = element.offsetParent);
+
+  return { x: left, y: top };
+}
+
+function getMousePosition(event) {
+  return {
+    x: event.pageX,
+    y: event.pageY
+  };
+}
+
 function getLevel(index) {
   var xhr = new XMLHttpRequest();
   xhr.open("GET", './maps/level' + index + '.json');
@@ -29,7 +48,8 @@ const B = 1,
 
 
 function SPRITE() {
-  this.size = Math.round(((window.innerWidth>window.innerHeight)? window.innerHeight:window.innerWidth )/10);
+
+  this.size = 320 / 10; //parseInt(getComputedStyle(document.querySelector('canvas').parentNode).width) / 10 ;
   this.Mario = {
     up: new Image(this.size, this.size),
     down: new Image(this.size, this.size),
@@ -58,6 +78,7 @@ function SPRITE() {
 
 function GAME(id, data) {
   SPRITE.call(this);
+
   this.map = data.map;
   this.player = data.mario;
   this.targets = data.target;
@@ -70,7 +91,7 @@ function GAME(id, data) {
 
 GAME.prototype = {
   onresize: function() {
-    listener(window,'resize',this.init)
+    listener(window, 'resize', this.init)
   },
   draw: function(img, x, y) {
     if (img.complete) {
@@ -261,3 +282,23 @@ GAME.prototype.IsWin = function() {
     return false;
   }
 };
+
+GAME.prototype.getDirection = function(x, y) {
+  var w = this.cvs.width,
+    h = this.cvs.height,
+    dir = "none",
+    box1 = {
+      x: w/5,
+      y: 0,
+      w: (w*3)/5,
+      h: (h/5)
+    };
+console.log(box1);
+
+  if (x >= box1.x && x < box1.x + box1.w && y >= box1.y && y < box1.y + box1.h) {
+    dir = "up"
+  }
+
+
+  //alert(dir)
+}

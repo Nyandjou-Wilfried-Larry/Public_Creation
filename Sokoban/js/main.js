@@ -46,7 +46,7 @@ const KEY_DOWN = 40,
   KEY_Y = 89,
   KEY_Z = 90;
 
-
+/*
 var btn = document.querySelectorAll('.btn');
 
 const Btn = {
@@ -54,13 +54,14 @@ const Btn = {
   left: btn[1],
   right: btn[2],
   down: btn[3]
-};
-var Game,level=1,start=true;
+};*/
+var Game, level = 1,
+  start = true;
 getLevel(level).then(data => {
   Game = new GAME('#cvs', data);
 });
 
-
+/*
 for (var dir in Btn) {
   (function(dir) {
     if(start){
@@ -83,21 +84,25 @@ for (var dir in Btn) {
     }}
   })(dir);
 }
-
+*/
 
 
 listener(window, 'keyup', (e) => {
   switch (e.keyCode) {
-    case KEY_UP : case KEY_Z:
+    case KEY_UP:
+    case KEY_Z:
       Game.move('up');
       break;
-    case KEY_DOWN : case KEY_S:
+    case KEY_DOWN:
+    case KEY_S:
       Game.move('down');
       break;
-    case KEY_LEFT : case KEY_Q:
+    case KEY_LEFT:
+    case KEY_Q:
       Game.move('left');
       break;
-    case KEY_RIGHT : case KEY_D:
+    case KEY_RIGHT:
+    case KEY_D:
       Game.move('right');
       break;
     case KEY_ESC:
@@ -106,17 +111,28 @@ listener(window, 'keyup', (e) => {
   }
   Game.render();
   if (Game.IsWin()) {
-    start=false;
-        alert('Vous avez réussir le niveau №: '+level+'\n Voyons comment vous allez faire au niveau №: '+(level+1));
-        if((level+1)<5){
-          level++
-        } else{
-          alert('Vous avez réussir tout les niveau \n j\'espère que vous que vous vous êtes bien amusé 😉' );
-        }
-        getLevel(level).then(data => {
-          Game = new GAME('#cvs', data);
-          start=true;
-        });
+    start = false;
+    alert('Vous avez réussir le niveau №: ' + level + '\n Voyons comment vous allez faire au niveau №: ' + (level + 1));
+    if ((level + 1) < 5) {
+      level++
+    } else {
+      alert('Vous avez réussir tout les niveau \n j\'espère que vous que vous vous êtes bien amusé 😉');
+    }
+    getLevel(level).then(data => {
+      Game = new GAME('#cvs', data);
+      start = true;
+    });
   }
 });
 
+
+listener(document.querySelector('#cvs'), 'click', (e) => {
+    var click = getMousePosition(e),
+      eltPos = getPosition(Game.cvs),
+      cx = click.x - eltPos.x,
+      cy = click.y - eltPos.y
+      //,dir = Game.getDirection(cx, cy);
+      ;
+      
+    alert(eltPos.x+' '+eltPos.y)
+});

@@ -57,6 +57,33 @@ p.logo img {
   object-fit: contain;
 }
 
+nav.opts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opts div {
+  height: 30px;
+  flex: 1;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 7px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.opts div:hover,
+div.open {
+  border-bottom: 3px solid indigo;
+  color: white;
+  background: #3C1E6F5E;
+}
+
+article {
+  display: none;
+}
+
 aside.content {
   width: 95%;
   box-shadow: var(--color-shadow);
@@ -67,15 +94,18 @@ aside.content {
   overflow-y: scroll;
 }
 
-article.creation {
+article.creation,
+article.creationApp {
   border-radius: 20px;
   box-shadow: var(--color-shadow);
   width: 75%;
   margin: 30px auto;
   overflow: hidden;
+  display: block;
 }
 
-.creation img {
+.creation img,
+.creationApp img {
   display: block;
   width: 90%;
   height: 80%;
@@ -83,7 +113,8 @@ article.creation {
   margin: 7px auto;
 }
 
-.creation>h3 {
+.creation>h3,
+.creationApp>h3 {
   height: calc(20% - 14px);
   font-weight: bolder;
   text-transform: capitalize;
@@ -93,7 +124,8 @@ h3 a {
   color: #000;
 }
 
-.creation div.description {
+.creation div.description,
+.creationApp div.description {
   display: block;
   width: 100%;
   height: 100%;
@@ -106,7 +138,8 @@ h3 a {
   font-size: 17px;
 }
 
-.creation:hover>div.description {
+.creation:hover>div.description,
+.creationApp:hover>div.description {
   /*  transform: translateY(var(--transHeight));*/
 
   transform: translateY(-102%);

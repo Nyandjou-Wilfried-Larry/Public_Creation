@@ -138,8 +138,8 @@ h3 a {
   font-size: 17px;
 }
 
-.creation:hover>div.description,
-.creationApp:hover>div.description {
+.creation img:hover+h3+div.description,
+.creationApp img:hover+h3+div.description {
   /*  transform: translateY(var(--transHeight));*/
 
   transform: translateY(-102%);

@@ -6,13 +6,16 @@ body,html{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .container{
   height: 100%;
-  width: 700px;
+  width: 900px;
   max-width: 100%;
+  margin: auto;
   position: relative;
+  background-color: #fff;
 }
 
 #cvs,
@@ -31,12 +34,16 @@ canvas,
   transform: translate(-50%, -50%);
 
 }
-/*
+
+#cvs,canvas{
+  top: 31%;
+}
+
 .control {
-/*  top: 80%;
-  max-width: 500px;
+  top: 80%;
+  max-width: 850px;
   width: 90%;
-  height: 35%;*//*
+  height: 35%;
   display: grid;
   grid-template-areas: "a u b"
     "l c r"

@@ -49,7 +49,7 @@ const B = 1,
 
 function SPRITE() {
 
-  this.size = 320 / 10; //parseInt(getComputedStyle(document.querySelector('canvas').parentNode).width) / 10 ;
+  this.size =parseInt(getComputedStyle(document.querySelector('canvas').parentNode).width) / 10 ;
   this.Mario = {
     up: new Image(this.size, this.size),
     down: new Image(this.size, this.size),

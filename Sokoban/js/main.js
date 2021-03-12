@@ -46,7 +46,7 @@ const KEY_DOWN = 40,
   KEY_Y = 89,
   KEY_Z = 90;
 
-/*
+
 var btn = document.querySelectorAll('.btn');
 
 const Btn = {
@@ -54,14 +54,14 @@ const Btn = {
   left: btn[1],
   right: btn[2],
   down: btn[3]
-};*/
+};
 var Game, level = 1,
   start = true;
 getLevel(level).then(data => {
   Game = new GAME('#cvs', data);
 });
 
-/*
+
 for (var dir in Btn) {
   (function(dir) {
     if(start){
@@ -84,7 +84,6 @@ for (var dir in Btn) {
     }}
   })(dir);
 }
-*/
 
 
 listener(window, 'keyup', (e) => {
@@ -125,7 +124,7 @@ listener(window, 'keyup', (e) => {
   }
 });
 
-
+/*
 listener(document.querySelector('#cvs'), 'click', (e) => {
     var click = getMousePosition(e),
       eltPos = getPosition(Game.cvs),
@@ -136,3 +135,12 @@ listener(document.querySelector('#cvs'), 'click', (e) => {
       
     alert(eltPos.x+' '+eltPos.y)
 });
+*/
+/*
+screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+
+if (screen.lockOrientationUniversal(["landscape-primary", "landscape-secondary"])) {
+  // Orientation was locked
+} else {
+  // Orientation lock failed
+}*/

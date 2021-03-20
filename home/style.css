@@ -48,8 +48,9 @@ h1.title {
   overflow: hidden;
 }
 
-h1.title {
+h1.title{
   padding-top: 15px;
+  text-shadow: 2px 0px 0px grey;
 }
 
 p.logo img {
@@ -99,6 +100,7 @@ article.creationApp {
   margin: 30px auto;
   overflow: hidden;
   display: block;
+  position: relative;
 }
 
 .creation img,
@@ -140,6 +142,21 @@ h2 a {
   /*  transform: translateY(var(--transHeight));*/
 
   transform: translateY(-102%);
+}
+
+article.creationApp .version{
+  background-color: #5216859E;
+  width: 60px;
+  height: 60px;
+  border-radius: 0 0 0 100%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  padding: 15px 0 0 0;
+  font-weight: bolder;
+  font-style: italic;
+  color: #fff;
+  text-transform: capitalize;
 }
 
 div h2 {

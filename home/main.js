@@ -39,7 +39,11 @@ function init() {
     };
   });
 
-  //document.documentElement.style.setProperty('--transHeight','-'+width);
+  document.querySelectorAll('.creationApp').forEach((el,i) => {
+    var a = document.querySelectorAll('.creationApp h2 a')[i];
+    /\/(v.+)\//ig.exec(a.href);
+    el.firstElementChild.innerText =RegExp.$1;
+  });
 }
 
 init();

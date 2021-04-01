@@ -44,6 +44,18 @@ function init() {
     /\/(v.+)\//ig.exec(a.href);
     el.firstElementChild.innerText =RegExp.$1;
   });
+  
+  var show = false;
+  document.querySelector('div.info').onclick = function(e) {
+    var bio = document.querySelector('.bio-cover');
+    if(show){
+      bio.style.display = 'none';
+      show = false;
+    }else{
+      bio.style.display = 'flex';
+      show = true;
+    }
+  }
 }
 
 init();

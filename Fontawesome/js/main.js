@@ -41,7 +41,7 @@ function Main(Marque, Regular, Solid) {
     }
 
     if (search && /[a-z0-9]|\-/gi.test(search)) {
-      var regex = new RegExp(search, 'gi'),
+      var regex = new RegExp(".*"+search+".*", 'gi'),
         result = [];
       icon[type].forEach((item) => {
         if (regex.test(item[0])) {

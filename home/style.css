@@ -30,6 +30,7 @@ body {
   /*height: 100%;*/
   text-align: center;
   background-color: #fff;
+  position: relative;
 }
 
 header {
@@ -144,7 +145,7 @@ h2 a {
   transform: translateY(-102%);
 }
 
-article.creationApp .version{
+article.creationApp .version,article.creation .type{
   background-color: #5216859E;
   width: 60px;
   height: 60px;
@@ -221,4 +222,107 @@ ul .fa-phone-alt {
 
 ul .fa-youtube {
   color: red;
+}
+
+div.info{
+  position: fixed;
+  top: 85vh;
+  left: 80%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #9C40A9B8;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-1);
+  font-size: 35px;
+  z-index: 100;
+  transition: var(--timing);
+}
+
+div.info:hover{
+  box-shadow: var(--color-shadow);
+  transform: scale(1.2);
+}
+
+.bio-cover{
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  align-items: center;
+}
+
+.bio{
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 25px 0;
+  padding: 5px;
+  box-shadow: var(--color-shadow);
+  background: var(--color-2);
+}
+
+.bio{
+  border: none;
+  text-align: justify;
+}
+
+.bio legend,legend img{
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+legend img{
+  object-fit: contain;
+}
+
+.bio p{
+  margin: auto;
+  padding: 2px;
+  text-transform: capitalize;
+}
+
+.bio p:not(.sign)::first-letter{
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 0 0 34px;
+}
+
+.bio p.sign{
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-style: italic;
+  margin: 7px auto;
+  text-shadow: 5px 3px 1px rgba(0, 0, 0, 0.6);
+}
+
+.bio p a{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.bio p .name{
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bio p span{
+  color: indigo;
+}
+
+.bio p span:not(.name){
+  background-color: #f1f1f1;
+  opacity: 0.5;
+  margin: 2px;
 }

@@ -4,10 +4,19 @@ document.querySelectorAll('.creationApp').forEach((el) => {
 
 function init() {
 
-  var width = getComputedStyle(document.querySelector('.creation')).width;
-
+  var width = getComputedStyle(document.querySelector('article')).width;
   document.querySelectorAll('article').forEach((el) => {
     el.style.height = width;
+  })
+
+  document.querySelectorAll('article img').forEach((el) => {
+    el.onclick = function(e){
+      var desc = el.nextElementSibling.nextElementSibling;//parentNode.querySelector('.description');
+      desc.classList.toggle("opened");
+      desc.onclick = function(e){
+        desc.classList.toggle("opened");
+      }
+    }
   })
 
   document.querySelectorAll('.opts div').forEach((el, i, p) => {
@@ -59,5 +68,5 @@ function init() {
 }
 
 init();
-
+//document.documentElement.addEventListener("resize",init,false);
 window.addEventListener('resize', init, false);
